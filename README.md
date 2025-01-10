@@ -24,26 +24,26 @@ The emojis that could be added are listed in the table below:
 
 | Emoji | Code | Count |
 | --- | --- | --- |
-| 😄 | :smile:  1 |
-| 😆 | :laughing:  1 |
-| 😊 | :blush:  1 |
-| 😀 | :smiley:  1 |
-| ☺️ | :relaxed:  1 |
-| 😏 | :smirk:  1 |
-| 😍 | :heart_eyes:  1 |
-| 😘 | :kissing_heart:  1 |
-| 😚 | :kissing_closed_eyes:  2 |
-| 😳 | :flushed:  1 |
-| 😌 | :relieved:  1 |
-| 😆 | :satisfied:  1 |
-| 😁 | :grin:  1 |
-| 😉 | :wink:  1 |
-| 😜 | :stuck_out_tongue_winking_eye:  1 |
-| 😝 | :stuck_out_tongue_closed_eyes:  1 |
-| 😀 | :grinning:  1 |
-| 😗 | :kissing:  1 |
-| 😙 | :kissing_smiling_eyes:  1 |
-| 😛 | :stuck_out_tongue:  1 |
+| 😄 | :smile: | 1 |
+| 😆 | :laughing: | 1 |
+| 😊 | :blush: | 1 |
+| 😀 | :smiley: | 1 |
+| ☺️ | :relaxed: | 1 |
+| 😏 | :smirk: | 1 |
+| 😍 | :heart_eyes: | 1 |
+| 😘 | :kissing_heart: | 1 |
+| 😚 | :kissing_closed_eyes: | 2 |
+| 😳 | :flushed: | 1 |
+| 😌 | :relieved: | 1 |
+| 😆 | :satisfied: | 1 |
+| 😁 | :grin: | 1 |
+| 😉 | :wink: | 1 |
+| 😜 | :stuck_out_tongue_winking_eye: | 1 |
+| 😝 | :stuck_out_tongue_closed_eyes: | 1 |
+| 😀 | :grinning: | 1 |
+| 😗 | :kissing: | 1 |
+| 😙 | :kissing_smiling_eyes: | 1 |
+| 😛 | :stuck_out_tongue: | 1 |
 
 Please note that the time is in UTC. You may need to convert it to your local time zone.
 
