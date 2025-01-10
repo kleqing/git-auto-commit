@@ -20,9 +20,7 @@ This GitHub Action is set to continue its daily tasks until the end of the year 
 
 ## 😄 What emojis could be added? 😄
 
-Please note that the time is in UTC. You may need to convert it to your local time zone.
-
----
+The emojis that could be added are listed in the table below:
 
 | Emoji | Code | Count |
 | --- | --- | --- |
@@ -46,3 +44,8 @@ Please note that the time is in UTC. You may need to convert it to your local ti
 | 😗 | :kissing:  1 |
 | 😙 | :kissing_smiling_eyes:  1 |
 | 😛 | :stuck_out_tongue:  1 |
+
+Please note that the time is in UTC. You may need to convert it to your local time zone.
+
+---
+
