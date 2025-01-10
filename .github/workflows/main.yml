@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 🔍 Check out code
+    - name: Check out code
       uses: actions/checkout@v2
 
-    - name: ⚡️ Update README
+    - name: Update README
       run: |
         if [ ! -f "README.md" ]; then
           echo "| Emoji        | Count |" > README.md
@@ -31,7 +31,7 @@ jobs:
         echo "Updated README.md:"
         cat README.md
 
-    - name: ✅ Commit and push
+    - name: Commit and push
       run: |
         if [[ "$(date +%Y)" -gt "2026" ]]; then
           echo "It's now past 2026, stopping updates."
