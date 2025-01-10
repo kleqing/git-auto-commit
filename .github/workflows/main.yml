@@ -2,10 +2,7 @@ name: 🃏 Autocommit workflow
 
 on:
   schedule:
-    # Runs every day at 18:00 UTC
-    - cron: '0 0 * * *'
-  push:
-    branches: [ main ]
+    - cron: '0 22 * * *' # Chạy hàng ngày vào 22:00 UTC
 
 jobs:
   update-readme:
@@ -20,10 +17,19 @@ jobs:
         if [ ! -f "README.md" ]; then
           echo "| Emoji        | Count |" > README.md
           echo "|--------------|-------|" >> README.md
+          echo "| :smile: | 1 |" >> README.md
+        else
+          EMOJIS=(":smile:" ":laughing:" ":blush:" ":smiley:")
+          RANDOM_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]}
+          if grep -q "$RANDOM_EMOJI" README.md; then
+            sed -i "s/| $RANDOM_EMOJI | [0-9]* |/| $RANDOM_EMOJI | $(( $(grep -oP '\| \K[0-9]+(?= \|)' <<< $(grep $RANDOM_EMOJI README.md)) + 1 )) |/" README.md
+          else
+            echo "| $RANDOM_EMOJI | 1 |" >> README.md
+          fi
         fi
-        EMOJIS=(":smile:" ":laughing:" ":blush:" ":smiley:" ":relaxed:" ":smirk:" ":heart_eyes:" ":kissing_heart:" ":kissing_closed_eyes:" ":flushed:" ":relieved:" ":satisfied:" ":grin:" ":wink:" ":stuck_out_tongue_winking_eye:" ":stuck_out_tongue_closed_eyes:" ":grinning:" ":kissing:" ":kissing_smiling_eyes:" ":stuck_out_tongue:")
-        RANDOM_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]}
-        sed -i "/$RANDOM_EMOJI/{s/| [0-9]* |/ $((`grep -o '[0-9]*' <<< $(grep $RANDOM_EMOJI README.md)`+1)) |/}" README.md
+
+        echo "Updated README.md:"
+        cat README.md
 
     - name: ✅ Commit and push
       run: |
@@ -31,12 +37,16 @@ jobs:
           echo "It's now past 2026, stopping updates."
           exit 0
         fi
-        
+
         git config --local user.email "hotaruu24k@gmail.com"
         git config --local user.name "kleqing"
-        git remote set-url origin https://$GITHUB_TOKEN@github.com/kleqing/git-auto-commit.git
         git add README.md
-        git commit -m "🆕 New Emoji Added $RANDOM_EMOJI"
-        git push
+
+        if ! git diff --cached --quiet; then
+          git commit -m "🆕 New Emoji Added $RANDOM_EMOJI"
+          git push
+        else
+          echo "No changes to commit."
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
