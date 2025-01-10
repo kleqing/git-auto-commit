@@ -27,8 +27,8 @@ jobs:
           echo "It's now past 2024, stopping updates."
           exit 0
         fi
-        git config --local user.email "contacto@diegomarty.com"
-        git config --local user.name "DiegoMarty"
+        git config --local user.email "hotaruu24k@gmail.com"
+        git config --local user.name "kleqing"
         git remote set-url origin https://$GITHUB_TOKEN@github.com/kleqing/git-auto-commit.git
         git add README.md
         git commit -m "🆕 New Emoji Added $RANDOM_EMOJI"
