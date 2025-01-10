@@ -1,36 +1,37 @@
-name: Auto Commit
+name: 🃏 Autocommit workflow
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Run every day at midnight UTC
+    # Runs every day at 18:00 UTC
+    - cron: '0 0 * * *'
+  push:
+    branches: [ main ]
 
 jobs:
-  commit:
+  update-readme:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - name: 🔍 Check out code
+      uses: actions/checkout@v2
 
-    - name: Create or update file and commit
+    - name: ⚡️ Update README
       run: |
-        FILE="commit_number.md"
-        if [ ! -f "$FILE" ]; then
-          echo "Hello, my name is Nhan" > "$FILE"
-          echo "commit number: 1" >> "$FILE"
-        else
-          CURRENT_COUNT=$(grep -oP 'commit number: \K\d+' "$FILE")
-          if [ -z "$CURRENT_COUNT" ]; then
-            CURRENT_COUNT=0
-          fi
-          NEXT_COUNT=$((CURRENT_COUNT + 1))
-          sed -i "/commit number: /c\commit number: $NEXT_COUNT" "$FILE"
+        EMOJIS=(":smile:" ":laughing:" ":blush:" ":smiley:" ":relaxed:" ":smirk:" ":heart_eyes:" ":kissing_heart:" ":kissing_closed_eyes:" ":flushed:" ":relieved:" ":satisfied:" ":grin:" ":wink:" ":stuck_out_tongue_winking_eye:" ":stuck_out_tongue_closed_eyes:" ":grinning:" ":kissing:" ":kissing_smiling_eyes:" ":stuck_out_tongue:")
+        RANDOM_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]}
+        sed -i "/$RANDOM_EMOJI/{s/| [0-9]* |/ $((`grep -o '[0-9]*' <<< $(grep $RANDOM_EMOJI README.md)`+1)) |/}" README.md
+
+    - name: ✅ Commit and push
+      run: |
+        if [[ "$(date +%Y)" -gt "2024" ]]; then
+          echo "It's now past 2024, stopping updates."
+          exit 0
         fi
-        git config --global user.name "kleqing"
-        git config --global user.email "hotaruu24k@gmail.com"
-        git pull --rebase origin main
-        git add "$FILE"
-        git commit -m "Hello, my name is Nhan, nice to meet you"
-        git push origin main
+        git config --local user.email "contacto@diegomarty.com"
+        git config --local user.name "DiegoMarty"
+        git remote set-url origin https://$GITHUB_TOKEN@github.com/kleqing/git-auto-commit.git
+        git add README.md
+        git commit -m "🆕 New Emoji Added $RANDOM_EMOJI"
+        git push
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
