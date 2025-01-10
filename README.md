@@ -1,6 +1,6 @@
 # 🌐 Daily-Git-Commit 🌐
 
-[![🃏 Autocommit workflow](https://github.com/kleqing/git-auto-commit/actions/workflows/main.yml/badge.svg?event=check_run)](https://github.com/kleqing/git-auto-commit/actions/workflows/main.yml)
+[![🃏 Autocommit workflow](https://github.com/kleqing/git-auto-commit/actions/workflows/main.yaml/badge.svg?event=check_run)](https://github.com/kleqing/git-auto-commit/actions/workflows/main.yaml)
 
 ## 📋 What is this repository about? 📋
 
@@ -23,4 +23,26 @@ This GitHub Action is set to continue its daily tasks until the end of the year 
 Please note that the time is in UTC. You may need to convert it to your local time zone.
 
 ---
-| :smile: | 1 |
+
+| Emoji | Code | Count |
+| --- | --- | --- |
+| 😄 | :smile:  1 |
+| 😆 | :laughing:  1 |
+| 😊 | :blush:  1 |
+| 😀 | :smiley:  1 |
+| ☺️ | :relaxed:  1 |
+| 😏 | :smirk:  1 |
+| 😍 | :heart_eyes:  1 |
+| 😘 | :kissing_heart:  1 |
+| 😚 | :kissing_closed_eyes:  2 |
+| 😳 | :flushed:  1 |
+| 😌 | :relieved:  1 |
+| 😆 | :satisfied:  1 |
+| 😁 | :grin:  1 |
+| 😉 | :wink:  1 |
+| 😜 | :stuck_out_tongue_winking_eye:  1 |
+| 😝 | :stuck_out_tongue_closed_eyes:  1 |
+| 😀 | :grinning:  1 |
+| 😗 | :kissing:  1 |
+| 😙 | :kissing_smiling_eyes:  1 |
+| 😛 | :stuck_out_tongue:  1 |
