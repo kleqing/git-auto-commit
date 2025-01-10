@@ -2,7 +2,7 @@ name: 🃏 Autocommit workflow
 
 on:
   schedule:
-    - cron: '0 22 * * *' # Chạy hàng ngày vào 22:00 UTC
+    - cron: '0 15 * * *' # Chạy hàng ngày vào 22:00 UTC
 
 jobs:
   update-readme:
