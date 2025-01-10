@@ -2,7 +2,7 @@ name: 🃏 Autocommit workflow
 
 on:
   schedule:
-    - cron: '0 15 * * *' # Chạy hàng ngày vào 22:00 UTC
+    - cron: '0 15 * * *' # Run everyday at 15:00
   push:
     branches: [ main ]
   workflow_dispatch:
@@ -17,9 +17,55 @@ jobs:
 
     - name: ⚡️ Update README
       run: |
-        EMOJIS=(":smile:" ":laughing:" ":blush:" ":smiley:" ":relaxed:" ":smirk:" ":heart_eyes:" ":kissing_heart:" ":kissing_closed_eyes:" ":flushed:" ":relieved:" ":satisfied:" ":grin:" ":wink:" ":stuck_out_tongue_winking_eye:" ":stuck_out_tongue_closed_eyes:" ":grinning:" ":kissing:" ":kissing_smiling_eyes:" ":stuck_out_tongue:")
-        RANDOM_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]}
-        sed -i "/$RANDOM_EMOJI/{s/| [0-9]* |/ $((`grep -o '[0-9]*' <<< $(grep $RANDOM_EMOJI README.md)`+1)) |/}" README.md
+        # If readme.md not exist, create a new one
+        if [ ! -f "README.md" ]; then
+          echo "| Emoji | Code | Count |" > README.md
+          echo "| --- | --- | --- |" >> README.md
+          echo "| 😄 | :smile: | 1 |" >> README.md
+        else
+          # Emojis
+          EMOJIS=(
+            "😄 :smile:"
+            "😆 :laughing:"
+            "😊 :blush:"
+            "😀 :smiley:"
+            "☺️ :relaxed:"
+            "😏 :smirk:"
+            "😍 :heart_eyes:"
+            "😘 :kissing_heart:"
+            "😚 :kissing_closed_eyes:"
+            "😳 :flushed:"
+            "😌 :relieved:"
+            "😆 :satisfied:"
+            "😁 :grin:"
+            "😉 :wink:"
+            "😜 :stuck_out_tongue_winking_eye:"
+            "😝 :stuck_out_tongue_closed_eyes:"
+            "😀 :grinning:"
+            "😗 :kissing:"
+            "😙 :kissing_smiling_eyes:"
+            "😛 :stuck_out_tongue:"
+          )
+          
+          # Choose random emojis
+          RANDOM_ENTRY=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]}
+          RANDOM_EMOJI=$(echo $RANDOM_ENTRY | cut -d' ' -f1)
+          RANDOM_CODE=$(echo $RANDOM_ENTRY | cut -d' ' -f2)
+    
+          # Check if emoji exist in readme.md
+          if grep -q "$RANDOM_CODE" README.md; then
+            # increase count
+            sed -i "s/| $RANDOM_EMOJI | $RANDOM_CODE | [0-9]* |/| $RANDOM_EMOJI | $RANDOM_CODE | $(( $(grep -oP '(?<=\| '$RANDOM_CODE' \| )\d+' README.md) + 1 )) |/" README.md
+          else
+            # Add new one if not exist
+            echo "| $RANDOM_EMOJI | $RANDOM_CODE | 1 |" >> README.md
+          fi
+        fi
+    
+        # Update
+        echo "Updated README.md:"
+        cat README.md
+    
 
     - name: ✅ Commit and push
       run: |
@@ -27,11 +73,16 @@ jobs:
           echo "It's now past 2026, stopping updates."
           exit 0
         fi
+
         git config --local user.email "hotaruu24k@gmail.com"
         git config --local user.name "kleqing"
-        git remote set-url origin https://$GITHUB_TOKEN@github.com/kleqing/git-auto-commit.git
         git add README.md
-        git commit -m "🆕 New Emoji Added $RANDOM_EMOJI"
-        git push
+
+        if ! git diff --cached --quiet; then
+          git commit -m "🆕 New Emoji Added $RANDOM_EMOJI"
+          git push
+        else
+          echo "No changes to commit."
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
