@@ -23,8 +23,8 @@ jobs:
 
     - name: ✅ Commit and push
       run: |
-        if [[ "$(date +%Y)" -gt "2024" ]]; then
-          echo "It's now past 2024, stopping updates."
+        if [[ "$(date +%Y)" -gt "2026" ]]; then
+          echo "It's now past 2026, stopping updates."
           exit 0
         fi
         git config --local user.email "hotaruu24k@gmail.com"
