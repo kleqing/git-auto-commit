@@ -2,7 +2,7 @@ name: 🃏 Autocommit workflow
 
 on:
   schedule:
-    - cron: '0 15 * * *' # Run everyday at 15:00
+    - cron: '0 * * * *' # Run everyday 1 hours
   push:
     branches: [ main ]
   workflow_dispatch:
