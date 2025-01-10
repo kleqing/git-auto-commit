@@ -4,8 +4,7 @@ on:
   schedule:
     - cron: '0 15 * * *' # Chạy hàng ngày vào 22:00 UTC
   push:
-      branches:
-        - main
+    branches: [ main ]
   workflow_dispatch:
   
 jobs:
@@ -13,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
+    - name: 🔍 Check out code
       uses: actions/checkout@v2
 
     - name: ⚡️ Update README
@@ -22,10 +21,10 @@ jobs:
         RANDOM_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]}
         sed -i "/$RANDOM_EMOJI/{s/| [0-9]* |/ $((`grep -o '[0-9]*' <<< $(grep $RANDOM_EMOJI README.md)`+1)) |/}" README.md
 
-    - name: Commit and push
+    - name: ✅ Commit and push
       run: |
-        if [[ "$(date +%Y)" -gt "2024" ]]; then
-          echo "It's now past 2024, stopping updates."
+        if [[ "$(date +%Y)" -gt "2026" ]]; then
+          echo "It's now past 2026, stopping updates."
           exit 0
         fi
         git config --local user.email "hotaruu24k@gmail.com"
