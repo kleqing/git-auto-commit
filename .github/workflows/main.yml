@@ -28,6 +28,7 @@ jobs:
         fi
         git config --global user.name "kleqing"
         git config --global user.email "hotaruu24k@gmail.com"
+        git pull --rebase origin main
         git add "$FILE"
         git commit -m "Hello, my name is Nhan, nice to meet you"
         git push origin main
