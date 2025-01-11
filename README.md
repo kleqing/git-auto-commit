@@ -43,7 +43,7 @@ The emojis that could be added are listed in the table below:
 | 😀 | :grinning: | 2 |
 | 😗 | :kissing: | 2 |
 | 😙 | :kissing_smiling_eyes: | 3 |
-| 😛 | :stuck_out_tongue: | 4 |
+| 😛 | :stuck_out_tongue: | 5 |
 
 Please note that the time is in UTC. You may need to convert it to your local time zone.
 
