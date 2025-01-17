@@ -40,7 +40,7 @@ The emojis that could be added are listed in the table below:
 | 😉 | :wink: | 7 |
 | 😜 | :stuck_out_tongue_winking_eye: | 8 |
 | 😝 | :stuck_out_tongue_closed_eyes: | 8 |
-| 😀 | :grinning: | 10 |
+| 😀 | :grinning: | 11 |
 | 😗 | :kissing: | 9 |
 | 😙 | :kissing_smiling_eyes: | 14 |
 | 😛 | :stuck_out_tongue: | 10 |
