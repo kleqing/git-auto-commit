@@ -27,7 +27,7 @@ The emojis that could be added are listed in the table below:
 | 😄 | :smile: | 16 |
 | 😆 | :laughing: | 21 |
 | 😊 | :blush: | 11 |
-| 😀 | :smiley: | 15 |
+| 😀 | :smiley: | 16 |
 | ☺️ | :relaxed: | 15 |
 | 😏 | :smirk: | 16 |
 | 😍 | :heart_eyes: | 16 |
