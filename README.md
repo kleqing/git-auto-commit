@@ -32,7 +32,7 @@ The emojis that could be added are listed in the table below:
 | 😏 | :smirk: | 25 |
 | 😍 | :heart_eyes: | 30 |
 | 😘 | :kissing_heart: | 31 |
-| 😚 | :kissing_closed_eyes: | 25 |
+| 😚 | :kissing_closed_eyes: | 26 |
 | 😳 | :flushed: | 34 |
 | 😌 | :relieved: | 27 |
 | 😆 | :satisfied: | 23 |
