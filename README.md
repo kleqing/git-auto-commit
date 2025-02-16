@@ -35,7 +35,7 @@ The emojis that could be added are listed in the table below:
 | 😚 | :kissing_closed_eyes: | 44 |
 | 😳 | :flushed: | 45 |
 | 😌 | :relieved: | 41 |
-| 😆 | :satisfied: | 33 |
+| 😆 | :satisfied: | 34 |
 | 😁 | :grin: | 45 |
 | 😉 | :wink: | 46 |
 | 😜 | :stuck_out_tongue_winking_eye: | 58 |
