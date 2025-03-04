@@ -25,7 +25,7 @@ The emojis that could be added are listed in the table below:
 | Emoji | Code | Count |
 | --- | --- | --- |
 | 😄 | :smile: | 68 |
-| 😆 | :laughing: | 61 |
+| 😆 | :laughing: | 62 |
 | 😊 | :blush: | 56 |
 | 😀 | :smiley: | 68 |
 | ☺️ | :relaxed: | 55 |
