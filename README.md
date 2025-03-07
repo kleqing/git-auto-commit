@@ -36,7 +36,7 @@ The emojis that could be added are listed in the table below:
 | 😳 | :flushed: | 68 |
 | 😌 | :relieved: | 60 |
 | 😆 | :satisfied: | 51 |
-| 😁 | :grin: | 62 |
+| 😁 | :grin: | 63 |
 | 😉 | :wink: | 69 |
 | 😜 | :stuck_out_tongue_winking_eye: | 78 |
 | 😝 | :stuck_out_tongue_closed_eyes: | 56 |
