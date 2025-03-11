@@ -42,7 +42,7 @@ The emojis that could be added are listed in the table below:
 | 😝 | :stuck_out_tongue_closed_eyes: | 60 |
 | 😀 | :grinning: | 77 |
 | 😗 | :kissing: | 70 |
-| 😙 | :kissing_smiling_eyes: | 70 |
+| 😙 | :kissing_smiling_eyes: | 71 |
 | 😛 | :stuck_out_tongue: | 68 |
 
 Please note that the time is in UTC. You may need to convert it to your local time zone.
