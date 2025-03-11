@@ -38,7 +38,7 @@ The emojis that could be added are listed in the table below:
 | 😆 | :satisfied: | 54 |
 | 😁 | :grin: | 68 |
 | 😉 | :wink: | 73 |
-| 😜 | :stuck_out_tongue_winking_eye: | 82 |
+| 😜 | :stuck_out_tongue_winking_eye: | 83 |
 | 😝 | :stuck_out_tongue_closed_eyes: | 61 |
 | 😀 | :grinning: | 78 |
 | 😗 | :kissing: | 70 |
