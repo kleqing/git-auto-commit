@@ -31,7 +31,7 @@ The emojis that could be added are listed in the table below:
 | ☺️ | :relaxed: | 69 |
 | 😏 | :smirk: | 82 |
 | 😍 | :heart_eyes: | 71 |
-| 😘 | :kissing_heart: | 85 |
+| 😘 | :kissing_heart: | 86 |
 | 😚 | :kissing_closed_eyes: | 79 |
 | 😳 | :flushed: | 76 |
 | 😌 | :relieved: | 73 |
