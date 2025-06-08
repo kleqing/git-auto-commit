@@ -6,7 +6,7 @@
 
 This repository is automated with a **GitHub Action** that is programmed to perform a unique task:
 
-Every 1 hour, this GitHub Action springs into action. It performs a simple yet effective operation: it updates this README file.
+Every 2 hour, this GitHub Action springs into action. It performs a simple yet effective operation: it updates this README file.
 
 ## 🔄 What does the update involve? 🔄
 
