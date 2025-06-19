@@ -1,4 +1,4 @@
-# green-commit
+# Auto commit
 
 The `task.sh` script generates random commit messages and updates an `update.md` file in your repository with the last update timestamp. It's a fun way to automate your daily commits while keeping your GitHub contribution graph green.
 
