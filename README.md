@@ -1,56 +1,38 @@
-# 🌐 Daily-Git-Commit 🌐
+# green-commit
 
-[![🃏 Autocommit workflow](https://github.com/kleqing/git-auto-commit/actions/workflows/main.yaml/badge.svg?event=check_run)](https://github.com/kleqing/git-auto-commit/actions/workflows/main.yaml)
+The `task.sh` script generates random commit messages and updates an `update.md` file in your repository with the last update timestamp. It's a fun way to automate your daily commits while keeping your GitHub contribution graph green.
 
-## 📋 What is this repository about? 📋
+## How it works
 
-This repository is automated with a **GitHub Action** that is programmed to perform a unique task:
+1. The script defines an array of commit messages, each with an emoji and a short description.
 
-Every 2 hour, this GitHub Action springs into action. It performs a simple yet effective operation: it updates this README file.
+2. It generates a random number to select a message from the array.
 
-## 🔄 What does the update involve? 🔄
+3. It gets the current date and time.
 
-During each update, a new line of text is appended at the end of this file. This line is a timestamp, marking the date and time at which the update was made. And to add a touch of fun to each update, a random emoji is included.
+4. If the `update.md` file doesn't exist, it creates it and stages it for commit.
 
-But that's not all! The same random emoji is also included in the commit message for that update.
+5. It appends the last update timestamp to the `update.md` file.
 
-## ⏳ How long will this continue? ⏳
+6. It configures local Git user information (you can replace the email and username with your own).
 
-This GitHub Action is set to continue its daily tasks until the end of the year 2026. (Or I can stop it soonẻ if I got A rank in my github stat💀)
+7. Finally, it commits the changes to the repository with a random commit message and the current timestamp.
 
-## 😄 What emojis could be added? 😄
+## Configure the default `GITHUB_TOKEN` permissions
 
-The emojis that could be added are listed in the table below:
+By default, `GITHUB_TOKEN` only has `Read repository contents and packages permissions` (the restricted setting).
 
-| Emoji | Code | Count |
-| --- | --- | --- |
-| 😄 | :smile: | 85 |
-| 😆 | :laughing: | 76 |
-| 😊 | :blush: | 76 |
-| 😀 | :smiley: | 82 |
-| ☺️ | :relaxed: | 78 |
-| 😏 | :smirk: | 85 |
-| 😍 | :heart_eyes: | 76 |
-| 😘 | :kissing_heart: | 92 |
-| 😚 | :kissing_closed_eyes: | 84 |
-| 😳 | :flushed: | 81 |
-| 😌 | :relieved: | 74 |
-| 😆 | :satisfied: | 61 |
-| 😁 | :grin: | 74 |
-| 😉 | :wink: | 83 |
-| 😜 | :stuck_out_tongue_winking_eye: | 97 |
-| 😝 | :stuck_out_tongue_closed_eyes: | 72 |
-| 😀 | :grinning: | 95 |
-| 😗 | :kissing: | 79 |
-| 😙 | :kissing_smiling_eyes: | 81 |
-| 😛 | :stuck_out_tongue: | 77 |
+1. Under your repository name, click **Settings**.
+2. In the left sidebar, click  **Actions**, then click **General**.
+3. Under "Workflow permissions", enable `Read and write permissions` (the permissive setting).
+4. Click **Save** to apply the settings.
 
-Please note that the time is in UTC. You may need to convert it to your local time zone.
+## Customize
 
----
+- Replace the [Git user information](https://github.com/zhafranzainal/green-commit/blob/main/task.sh#L29) with your own.
+- Change the [cron schedule](https://github.com/zhafranzainal/green-commit/blob/main/.github/workflows/bot.yml#L13) for the automation of daily commits. (Refer: [https://crontab.guru/](https://crontab.guru/))
+- Modify the [messages array](https://github.com/zhafranzainal/green-commit/blob/main/task.sh#L3) to include your own commit messages.
 
-## Credit:
+## Notes
 
-- [ChatGPT](chatgpt.com): Fixing my readme and yamla format
-- [Daily-Git-Commit](https://github.com/diegomarty/daily-git-commit): Original repository
-
+- GitHub Actions runs on Coordinated Universal Time (UTC) time, so commit timestamps will be in UTC, affecting your GitHub contribution graph based on UTC time instead of your local time zone.
